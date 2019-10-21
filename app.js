@@ -191,9 +191,18 @@ function hazardWarningCreator(typeOfWarning) {
   return function (location) {
     warningCounter++;
     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    
+    if(warningCounter == 1) {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`)
+    } else if(warningCounter == 0 || warningCounter >= 2) {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`)
+    }
   }
 }
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
 const animalsWarning = hazardWarningCreator('Animals on the Road');
 const treesWarning = hazardWarningCreator('Trees on the Road');
+
+
+
+
+Can you figure out how to log out "time" for a value of 1 and "times" for a value of 0 or >= 2?
