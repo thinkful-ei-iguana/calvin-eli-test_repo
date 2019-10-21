@@ -267,3 +267,20 @@ const food = {
 };
 
 console.log(food.meals[3]);
+
+
+const person1 = {
+  name: 'Carson', 
+  jobTitle: 'programmer1',    
+}
+const person2 = {
+    name: 'Skyler',
+    jobTitle: 'programmer2',
+}
+const person3 = {
+  name: 'David',
+  jobTitle: 'programmer3',
+}
+const objectTraining = [person1, person2, person3];
+for(let i=0;i<objectTraining.length;i++)
+console.log(objectTraining[i]);
