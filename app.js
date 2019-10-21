@@ -289,3 +289,24 @@ for (let i = 0; i < objectTraining.length; i++) {
   if (c.boss) console.log(`${c.jobTitle} ${c.name} reports to ${c.boss}.`);
   else console.log(`${c.jobTitle} ${c.name} doesn't report to anybody.`);
 }
+
+
+
+let words = "craft block argon meter bells brown croon droop";
+
+function decodeWords(words) {
+  let result = '';
+  let dec = words.split(/\b\s/);
+  const deco = {
+    a:1,
+    b:2,
+    c:3,
+    d:4,
+    
+}
+dec.forEach(i=>{
+  if (Object.keys(deco).indexOf(i[0]) != -1) { let l = Object.values(deco)[Object.keys(deco).indexOf(i[0])]; result += i[l]; } else result += " ";
+  
+})
+return result;
+}
