@@ -214,11 +214,31 @@ newMoves.forEach((el, i) => {
   console.log(`Movement #${i}: ${el} ${el > 1 || el == 0 ? "steps" : "step"}`);
 });
 
-
-
 function decode(random) {
-  let result = '';
-  let start = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'.split(/\b\s/);
-  let decoderizer = start.reduce((result, i) => { if (i.length == 3) return result + " "; else return result + i[i.length - 1].toUpperCase(); }, " ");
-  return(decoderizer);
+  let result = "";
+  let start = "noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest".split(
+    /\b\s/
+  );
+  let decoderizer = start.reduce((result, i) => {
+    if (i.length == 3) return result + " ";
+    else return result + i[i.length - 1].toUpperCase();
+  }, "");
+  return decoderizer;
 }
+
+// Create an object called loaf using an object initializer ({}) with two properties: flour, which should be set to 300 and water which should be set to 210.
+// Use console.log to print the flour and water properties.
+// Add an empty method to the loaf object called hydration.
+// Fill in the body of the method to return the hydration of the loaf (the water divided by the flour multiplied by 100).
+// Call the hydration method and use console.log to print the result.
+
+const loaf = {
+  flour: 300,
+  water: 210,
+  hydration() {
+    return (this.water / this.flour) * 100;
+  }
+};
+
+console.log(loaf.flour, loaf.water);
+console.log(loaf.hydration());
