@@ -76,37 +76,81 @@ function decode(words) {
   return result.join("");
 }
 
-
-
-
 function daysPerMonth(month, leapYear) {
-  let result ;
+  let result;
 
- 
   switch (month) {
     default:
-      throw new Error ('Must provide a valid month');
+      throw new Error("Must provide a valid month");
       break;
-    case 'January':
-    case 'March':
-    case 'May':
-    case 'July':
-    case 'August':
-    case 'October':
-    case 'December':
+    case "January":
+    case "March":
+    case "May":
+    case "July":
+    case "August":
+    case "October":
+    case "December":
       result = 31;
       break;
-    case 'February': 
+    case "February":
       if (leapYear == true) {
         result = 29;
       } else result = 28;
       break;
-    case 'April':
-    case 'June':
-    case 'September':
-    case 'November':
+    case "April":
+    case "June":
+    case "September":
+    case "November":
       result = 30;
       break;
-    } 
-    return month + 'has' + result + 'days.'
+  }
+  return month + "has" + result + "days.";
+}
+
+function rockPaperScissors(num) {
+  if (num < 1 || num > 3)
+    throw new RangeError("enter a number between 1 and 3.");
+
+  const items = ["rock", "paper", "scissors"];
+
+  const randomNo = Math.floor(Math.random() * 3);
+
+  const playerChose = items[num];
+  const computerChose = items[randomNo];
+
+  switch (computerChose) {
+    case "rock":
+      if (playerChose == "scissors") {
+        return console.log("you lost.");
+      }
+      if (playerChose == "rock") {
+        return console.log("tie.");
+      }
+      if (playerChose == "paper") {
+        return console.log("you won.");
+      }
+      break;
+    case "paper":
+      if (playerChose == "scissors") {
+        return console.log("you won.");
+      }
+      if (playerChose == "rock") {
+        return console.log("you lost.");
+      }
+      if (playerChose == "paper") {
+        return console.log("tie.");
+      }
+      break;
+    case "scissors":
+      if (playerChose == "scissors") {
+        return console.log("tie.");
+      }
+      if (playerChose == "rock") {
+        return console.log("you win.");
+      }
+      if (playerChose == "paper") {
+        return console.log("you lost.");
+      }
+      break;
+  }
 }
