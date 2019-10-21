@@ -213,3 +213,12 @@ let newMoves = turtleMovements
 newMoves.forEach((el, i) => {
   console.log(`Movement #${i}: ${el} ${el > 1 || el == 0 ? "steps" : "step"}`);
 });
+
+
+
+function decode(random) {
+  let result = '';
+  let start = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'.split(/\b\s/);
+  let decoderizer = start.reduce((result, i) => { if (i.length == 3) return result + " "; else return result + i[i.length - 1].toUpperCase(); }, " ");
+  return(decoderizer);
+}
