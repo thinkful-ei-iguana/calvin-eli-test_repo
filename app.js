@@ -16,9 +16,17 @@ function createGreeting(name, age) {
   const yob = yearOfBirth(age);
   return `Hi, my ${name} is Calvin and I'm ${age} years old, I was born in ${yob}`;
 }
+
 try {
   const createGreeting1 = createGreeting("bob", 20);
 } catch (e) {
   console.log(e);
 }
 console.log(createGreeting1);
+
+function jediName(firstName, lastName) {
+  let fName = lastName.substring(0, 3);
+  let lName = firstName.substring(0, 2);
+
+  return fName + lName;
+}
