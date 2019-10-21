@@ -242,3 +242,16 @@ const loaf = {
 
 console.log(loaf.flour, loaf.water);
 console.log(loaf.hydration());
+
+
+
+const properties = {
+  foo: 5,
+  bar: 3,
+  fum: 210,
+  quux: 70,
+  spam: 35,
+}
+for(x in properties) {
+  console.log(x, properties[x]);
+}
