@@ -155,26 +155,27 @@ function rockPaperScissors(num) {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 function repeat(fn, n) {
-  for(let i=0;i<n;i++) {
+  for (let i = 0; i < n; i++) {
     fn();
   }
-} 
+}
 
 function hello() {
-  console.log('Hello World');
+  console.log("Hello World");
 }
 function goodbye() {
-  console.log('Goodbye World')
+  console.log("Goodbye World");
 }
+
+function filter(arr, fn) {
+  let result = [];
+
+  for (let i = 0, len = arr.length; i < len; i++)
+    if (fn(arr[i]) == true) result.push(arr[i]);
+
+  return result;
+}
+
+const myNames = ["Rich", "Joe", "Bhaumik", "Ray"];
+const filteredNames = console.log(filter(myNames, name => name[0] === "R"));
