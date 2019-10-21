@@ -32,16 +32,46 @@ function jediName(firstName, lastName) {
 }
 
 function beyond(num) {
-  if(num === Infinity) {
-    console.log('And beyond')
+  if (num === Infinity) {
+    console.log("And beyond");
   }
-  if(isFinite(num)&&num>=0) {
-    console.log('To infinity')
+  if (isFinite(num) && num >= 0) {
+    console.log("To infinity");
   }
-  if(isFinite(num)&&num<0) {
-    console.log('To negative infinity')
+  if (isFinite(num) && num < 0) {
+    console.log("To negative infinity");
   }
-  if(num === 0) {
-    console.log('Staying home')
+  if (num === 0) {
+    console.log("Staying home");
   }
+}
+
+let words = "craft block argon meter bells brown croon droop";
+
+function decode(words) {
+  let w = words.split(/\b\s/);
+  let result = [];
+
+  w.forEach(word => {
+    if (word[0] != "a" && word[0] != "b" && word[0] != "c" && word[0] != "d") {
+      result.push(" ");
+    } else {
+      switch (word[0]) {
+        case "a":
+          result.push(word[1]);
+          break;
+        case "b":
+          result.push(word[2]);
+          break;
+        case "c":
+          result.push(word[3]);
+          break;
+        case "d":
+          result.push(word[4]);
+          break;
+      }
+    }
+  });
+
+  return result.join("");
 }
