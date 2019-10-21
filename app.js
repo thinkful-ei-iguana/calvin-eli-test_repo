@@ -179,3 +179,21 @@ function filter(arr, fn) {
 
 const myNames = ["Rich", "Joe", "Bhaumik", "Ray"];
 const filteredNames = console.log(filter(myNames, name => name[0] === "R"));
+
+
+
+
+
+
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return function (location) {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    
+  }
+}
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const animalsWarning = hazardWarningCreator('Animals on the Road');
+const treesWarning = hazardWarningCreator('Trees on the Road');
