@@ -268,19 +268,24 @@ const food = {
 
 console.log(food.meals[3]);
 
-
 const person1 = {
-  name: 'Carson', 
-  jobTitle: 'programmer1',    
-}
+  name: "Carson",
+  jobTitle: "programmer1",
+  boss: "david"
+};
 const person2 = {
-    name: 'Skyler',
-    jobTitle: 'programmer2',
-}
+  name: "Skyler",
+  jobTitle: "programmer2",
+  boss: "carson"
+};
 const person3 = {
-  name: 'David',
-  jobTitle: 'programmer3',
-}
+  name: "David",
+  jobTitle: "programmer3"
+};
 const objectTraining = [person1, person2, person3];
-for(let i=0;i<objectTraining.length;i++)
-console.log(objectTraining[i]);
+for (let i = 0; i < objectTraining.length; i++) {
+  let c = objectTraining[i];
+
+  if (c.boss) console.log(`${c.jobTitle} ${c.name} reports to ${c.boss}.`);
+  else console.log(`${c.jobTitle} ${c.name} doesn't report to anybody.`);
+}
