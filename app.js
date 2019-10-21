@@ -75,3 +75,38 @@ function decode(words) {
 
   return result.join("");
 }
+
+
+
+
+function daysPerMonth(month, leapYear) {
+  let result ;
+
+ 
+  switch (month) {
+    default:
+      throw new Error ('Must provide a valid month');
+      break;
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      result = 31;
+      break;
+    case 'February': 
+      if (leapYear == true) {
+        result = 29;
+      } else result = 28;
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      result = 30;
+      break;
+    } 
+    return month + 'has' + result + 'days.'
+}
