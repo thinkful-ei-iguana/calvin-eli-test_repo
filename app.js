@@ -180,29 +180,36 @@ function filter(arr, fn) {
 const myNames = ["Rich", "Joe", "Bhaumik", "Ray"];
 const filteredNames = console.log(filter(myNames, name => name[0] === "R"));
 
-
-
-
-
-
-
 function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
-  return function (location) {
+  return function(location) {
     warningCounter++;
     console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
-    if(warningCounter == 1) {
-      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`)
-    } else if(warningCounter == 0 || warningCounter >= 2) {
-      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`)
+    if (warningCounter == 1) {
+      console.log(
+        `The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`
+      );
+    } else if (warningCounter == 0 || warningCounter >= 2) {
+      console.log(
+        `The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`
+      );
     }
-  }
+  };
 }
-const rocksWarning = hazardWarningCreator('Rocks on the Road');
-const animalsWarning = hazardWarningCreator('Animals on the Road');
-const treesWarning = hazardWarningCreator('Trees on the Road');
+const rocksWarning = hazardWarningCreator("Rocks on the Road");
+const animalsWarning = hazardWarningCreator("Animals on the Road");
+const treesWarning = hazardWarningCreator("Trees on the Road");
 
+// Can you figure out how to log out "time" for a value of 1 and "times" for a value of 0 or >= 2?
 
+const turtleMovements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
+turtleMovements.filter(item => (item[0] < 0 || item[1] < 0 ? false : true));
 
-Can you figure out how to log out "time" for a value of 1 and "times" for a value of 0 or >= 2?
+let newMoves = turtleMovements
+  .filter(item => (item[0] < 0 || item[1] < 0 ? false : true))
+  .map(item => item[0] + item[1]);
+
+newMoves.forEach((el, i) => {
+  console.log(`Movement #${i}: ${el} ${el > 1 || el == 0 ? "steps" : "step"}`);
+});
